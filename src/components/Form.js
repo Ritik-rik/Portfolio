@@ -57,7 +57,6 @@ const Form = () => {
       emailjs.init(EMAILJS_USER_ID);
       
         const emailParams = {
-          to_email: 'mehtaritik1999@gmail.com', // Replace with the recipient's email
           name: formData.name,
           email: formData.email,
           subject: formData.subject,
