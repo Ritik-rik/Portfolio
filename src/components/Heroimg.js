@@ -9,8 +9,8 @@ const Heroimg = () => {
 
       </div>
       <div className="content">
-<p> Hi, I'M A NEW GRADUATE.</p>
-<h1>Software Developer.</h1>
+<p> Hi, I'M A SOFTWARE DEVELOPER.</p>
+<h1>RITIK MEHTA.</h1>
 <Link to="/project" className="btn">Projects</Link>
 <Link to="/contact" className="btn btn-light">Contact</Link>
       </div>
