@@ -17,6 +17,7 @@ const Form = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // Add isSubmitting state
 
   const validateForm = () => {
     let newErrors = {};
@@ -52,27 +53,38 @@ const Form = () => {
       setSuccessMessage('');
       setErrorMessage('');
     } else {
+      setIsSubmitting(true); // Set isSubmitting to true during submission
+
       try {
         // Initialize EmailJS with your API key
-      emailjs.init(EMAILJS_USER_ID);
-      
+        emailjs.init(EMAILJS_USER_ID);
+
         const emailParams = {
-          name: formData.name,
-          email: formData.email,
+          user_name: formData.name,
+          user_email: formData.email,
           subject: formData.subject,
           message: formData.message,
         };
 
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, emailParams);
-        
+
         setSuccessMessage('Email sent successfully');
         setErrorMessage('');
         setErrors({});
-        // You can reset the form here if needed
+        setIsSubmitting(false); // Set isSubmitting to false after submission
+        
+        // Reset the form fields to their initial state
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
       } catch (error) {
         console.error('Error sending email:', error);
         setErrorMessage('Failed to send email');
         setSuccessMessage('');
+        setIsSubmitting(false); // Set isSubmitting to false after submission
       }
     }
   };
@@ -113,9 +125,13 @@ const Form = () => {
         />
         {errors.message && <div className="error">{errors.message}</div>}
 
-        <button className="btn" type="submit">
-          Submit
-        </button>
+        {isSubmitting ? (
+          <p>Please wait...</p>
+        ) : (
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        )}
       </form>
 
       {successMessage && <div className="success">{successMessage}</div>}
