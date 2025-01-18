@@ -5,7 +5,6 @@ import About from "./routes/About"
 import Project from "./routes/Project"
 import Contact from "./routes/Contact"
 import Experience from "./routes/Experience"
-import GitHubContributions from "./components/GithubContributions";
 import { Route, Routes } from "react-router-dom";
 
 
