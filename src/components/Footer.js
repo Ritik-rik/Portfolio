@@ -14,7 +14,7 @@ const Footer = () => {
                     }
                 } />
     <div>
-        <p>565 Crawford Avenue, Windsor</p>
+        <p>River Street, Toronto</p>
         <p>Canada</p>
     </div>
     </div>
@@ -31,7 +31,7 @@ const Footer = () => {
                     {
                         color:"#fff",marginRight:"2rem"
                     }
-                } />mehta7b@wuindsor.ca</h4>
+                } />ritikmehta1999@hotmail.com</h4>
     </div>
     </div>
                 </div>
@@ -56,7 +56,7 @@ Please feel free to get in touch; I'm excited to meet new people and widen my ci
 
                     </a>
                
-                    <a href={"https://github.com/Ritik-rik"} target="_blank" rel="noopener noreferrer">
+                    <a href={"https://github.com/ritikrikm"} target="_blank" rel="noopener noreferrer">
                     <FaGithub  size={30} style={
                     {
                         color:"#fff",marginRight:"1rem"

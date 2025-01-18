@@ -1,52 +1,65 @@
-import { Link } from "react-router-dom"
-import "./NavbarStyle.css"
-import {FaBars,FaTimes} from "react-icons/fa"
-import React, { useState } from 'react'
+import { Link } from "react-router-dom";
+import "./NavbarStyle.css";
+import { FaBars, FaTimes } from "react-icons/fa";
+import React, { useState } from "react";
 
 const Navbar = () => {
-    const[click,setClick] = useState(false);
-    const handleClick = () =>setClick(!click);
+  const [click, setClick] = useState(false);
+  
+  // Handle clicking the hamburger menu
+  const handleClick = () => {
+    setClick(!click);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Scroll to top when menu is toggled
+  };
 
-    const[color,setColor] = useState(false);
-    const changeColor = () =>{
-        if(window.scrollY>=100){
-            setColor(true);
-        }else
-            setColor(false);
-    };
-    window.addEventListener("scroll",changeColor);
+  // Change the header background color based on scroll position
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 100) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+  window.addEventListener("scroll", changeColor);
+
+  // Scroll to the top when a menu item is clicked
+  const scrollToTop = () => {
+    setClick(false); // Close the menu
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Smoothly scroll to the top
+  };
 
   return (
-    <div    className={color ? "header header-bg":"header"}>
-        <Link to={"/"}>
-            <h1>Portfolio</h1>
-        </Link>
-    <ul className={click ? "nav-menu active": "nav-menu"}>
+    <div className={color ? "header header-bg" : "header"}>
+      <Link to="/" onClick={scrollToTop}>
+        <h1>Portfolio</h1>
+      </Link>
+      <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-            <Link to="/">Home</Link>
+          <Link to="/" onClick={scrollToTop}>Home</Link>
         </li>
         <li>
-            <Link to="/project">Project</Link>
+          <Link to="/project" onClick={scrollToTop}>Project</Link>
         </li>
         <li>
-            <Link to="/about">About</Link>
+          <Link to="/experience" onClick={scrollToTop}>Experience</Link>
         </li>
         <li>
-            <Link to="/contact">Contact</Link>
+          <Link to="/about" onClick={scrollToTop}>About</Link>
         </li>
-    </ul>
-    <div className="hamburger" onClick={handleClick}>
-        {click ? ( 
-        <FaTimes size={20} style={{color:
-        "#fff"}} />
+        <li>
+          <Link to="/contact" onClick={scrollToTop}>Contact</Link>
+        </li>
+      </ul>
+      <div className="hamburger" onClick={handleClick}>
+        {click ? (
+          <FaTimes size={20} style={{ color: "#fff" }} />
         ) : (
-            <FaBars size={20} style={{  color:"#fff"
-        }}/>
-       
-     )}
+          <FaBars size={20} style={{ color: "#fff" }} />
+        )}
+      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
