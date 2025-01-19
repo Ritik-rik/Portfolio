@@ -1,61 +1,160 @@
+/* General Container Styling */
+.experience-section-container {
+  padding: 20px;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle outer shadow */
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center; /* Center-align title */
+}
 
-  
-  .experience-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-height: 70vh; /* Limit height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding-right: 10px; /* Add space for scrollbar */
-    box-sizing: border-box; /* Include padding and scrollbar in the width */
-  }
-  
-  .experience-item {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+/* Title Styling */
+.experience-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2a4dab; /* Deep blue color */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Experience Item Styling */
+.experience-item {
+  background: linear-gradient(145deg, #ffffff, #f2f2f2); /* Modern gradient card */
+  border: 1px solid rgba(200, 200, 200, 0.4);
+  border-radius: 16px; /* Smooth rounded corners */
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  transition: all 0.3s ease-in-out;
+  margin: 10px auto;
+  max-width: 850px;
+}
+
+.experience-item:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.experience-item h2 {
+  font-size: 26px;
+  color: #2a4dab; /* Deep blue color */
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+}
+
+.experience-item h3 {
+  font-size: 22px;
+  color: #5f5f5f;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.experience-item p {
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+/* List Styling */
+ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #444444;
+  line-height: 1.6;
+  transition: color 0.2s ease-in-out;
+}
+
+ul li:hover {
+  color: #2a4dab; /* Highlight on hover */
+}
+
+/* Footer */
+.footer {
+  margin-top: auto; /* Push footer to the bottom */
+  position: relative;
+}
+
+/* Scrollbar Styling */
+.experience-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.experience-section::-webkit-scrollbar-thumb {
+  background: #2a4dab; /* Custom scrollbar thumb */
+  border-radius: 5px;
+}
+
+.experience-section::-webkit-scrollbar-thumb:hover {
+  background: #1d3790; /* Darker on hover */
+}
+
+.experience-section::-webkit-scrollbar-track {
+  background: #f0f4ff; /* Track background matching section */
+}
+
+/* ===== Responsive Design (Mobile-Friendly) ===== */
+
+/* For screens smaller than 768px (tablets and phones) */
+@media (max-width: 768px) {
+  .experience-section-container {
     padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px auto; /* Adds margin to separate items */
-    max-width: 800px;
+    margin: 10px auto;
+    max-width: 100%; /* Use full width */
   }
-  
-  .experience-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+
+  .experience-title {
+    font-size: 28px;
   }
-  
+
+  .experience-item {
+    padding: 15px;
+    max-width: 100%; /* Use full width */
+  }
+
   .experience-item h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 5px;
+    font-size: 22px;
   }
-  
+
   .experience-item h3 {
-    font-size: 20px;
-    color: #666;
-    margin-bottom: 10px;
+    font-size: 18px;
   }
-  
+
   .experience-item p {
-    font-size: 16px;
-    color: #444;
-    line-height: 1.5;
+    font-size: 14px;
   }
-  
-  ul {
-    padding-left: 20px;
-    list-style-type: disc;
-  }
-  
+
   ul li {
-    margin-bottom: 10px;
+    font-size: 14px;
   }
-  
-  .footer {
-    margin-top: auto; /* Push footer to the bottom */
-    position: relative;
+}
+
+/* For screens smaller than 480px (small phones) */
+@media (max-width: 480px) {
+  .experience-title {
+    font-size: 24px;
   }
-  
+
+  .experience-item h2 {
+    font-size: 20px;
+  }
+
+  .experience-item h3 {
+    font-size: 16px;
+  }
+
+  .experience-item p {
+    font-size: 13px;
+  }
+
+  ul li {
+    font-size: 13px;
+  }
+}

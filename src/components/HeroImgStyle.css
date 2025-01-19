@@ -87,4 +87,16 @@
 .ContributionCalendar-label {
     color: white !important; /* Set the text color to white */
   }
+  .typing-text {
+    font-weight: bold;
+    color: #ffd700; /* Optional color */
+    border-right: 2px solid #fff; /* Blinking cursor */
+    animation: blink 0.5s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
   
