@@ -1,15 +1,12 @@
-/* General Container Styling */
 .experience-section-container {
   padding: 20px;
-  background-color: black;
+ background-color: black;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle outer shadow */
   margin: 20px auto;
   max-width: 1200px;
   text-align: center; /* Center-align title */
 }
-
-/* Title Styling */
 .experience-title {
   font-size: 32px;
   font-weight: 700;
@@ -17,8 +14,6 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
-
-/* Experience Item Styling */
 .experience-item {
   background: linear-gradient(145deg, #ffffff, #f2f2f2); /* Modern gradient card */
   border: 1px solid rgba(200, 200, 200, 0.4);
@@ -58,7 +53,6 @@
   margin-bottom: 12px;
 }
 
-/* List Styling */
 ul {
   padding-left: 20px;
   list-style-type: disc;
@@ -76,7 +70,6 @@ ul li:hover {
   color: #2a4dab; /* Highlight on hover */
 }
 
-/* Footer */
 .footer {
   margin-top: auto; /* Push footer to the bottom */
   position: relative;
@@ -98,63 +91,4 @@ ul li:hover {
 
 .experience-section::-webkit-scrollbar-track {
   background: #f0f4ff; /* Track background matching section */
-}
-
-/* ===== Responsive Design (Mobile-Friendly) ===== */
-
-/* For screens smaller than 768px (tablets and phones) */
-@media (max-width: 768px) {
-  .experience-section-container {
-    padding: 15px;
-    margin: 10px auto;
-    max-width: 100%; /* Use full width */
-  }
-
-  .experience-title {
-    font-size: 28px;
-  }
-
-  .experience-item {
-    padding: 15px;
-    max-width: 100%; /* Use full width */
-  }
-
-  .experience-item h2 {
-    font-size: 22px;
-  }
-
-  .experience-item h3 {
-    font-size: 18px;
-  }
-
-  .experience-item p {
-    font-size: 14px;
-  }
-
-  ul li {
-    font-size: 14px;
-  }
-}
-
-/* For screens smaller than 480px (small phones) */
-@media (max-width: 480px) {
-  .experience-title {
-    font-size: 24px;
-  }
-
-  .experience-item h2 {
-    font-size: 20px;
-  }
-
-  .experience-item h3 {
-    font-size: 16px;
-  }
-
-  .experience-item p {
-    font-size: 13px;
-  }
-
-  ul li {
-    font-size: 13px;
-  }
 }
