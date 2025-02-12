@@ -1,57 +1,50 @@
 import "./HeroImgStyle.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import GitHubContributions from "./GithubContributions";
+//import GitHubContributions from "./GithubContributions";
 import { FaLinkedin, FaGithub, FaFileDownload } from "react-icons/fa";
-import GitHubCalendar from "github-calendar";
-import { useMemo } from "react";
+// import GitHubCalendar from "github-calendar"; // Commented out
 
 const Heroimg = () => {
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0); // Keeps track of character index in the current phrase
-  const [typingSpeed, setTypingSpeed] = useState(150); // Dynamic typing speed
+  const [charIndex, setCharIndex] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
   const phrases = useMemo(() => ["Developer", "Coder", "Learner"], []);
 
   useEffect(() => {
-    // Initialize GitHub Calendar
-    GitHubCalendar(".github-calendar", "ritikrikm", {
-      responsive: true,
-    });
+    // GitHub Calendar Initialization (Commented out)
+    // GitHubCalendar(".github-calendar", "ritikrikm", {
+    //   responsive: true,
+    // });
 
     const handleTyping = () => {
       const currentPhrase = phrases[loopIndex];
 
       if (!isDeleting) {
-        // Typing characters
         setDisplayText(currentPhrase.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
 
-        // If the entire word is typed, pause before deleting
         if (charIndex + 1 === currentPhrase.length) {
-          setTimeout(() => setIsDeleting(true), 1000); // Pause after typing the full word
-          setTypingSpeed(150); // Reset speed for deletion
+          setTimeout(() => setIsDeleting(true), 1000);
+          setTypingSpeed(150);
         }
       } else {
-        // Deleting characters
         setDisplayText(currentPhrase.slice(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
 
-        // If the entire word is deleted, move to the next word
         if (charIndex - 1 === 0) {
           setIsDeleting(false);
-          setLoopIndex((prev) => (prev + 1) % phrases.length); // Move to the next phrase
-          setTypingSpeed(150); // Reset speed for typing
+          setLoopIndex((prev) => (prev + 1) % phrases.length);
+          setTypingSpeed(150);
         }
       }
     };
 
-    // Typing effect interval
     const timer = setTimeout(handleTyping, typingSpeed);
-
-    return () => clearTimeout(timer); // Cleanup timeout
+    return () => clearTimeout(timer);
   }, [charIndex, isDeleting, loopIndex, typingSpeed, phrases]);
 
   return (
@@ -95,7 +88,7 @@ const Heroimg = () => {
           </a>
         </div>
 
-        <GitHubContributions />
+        {/*<GitHubContributions /> */}
       </div>
     </div>
   );
