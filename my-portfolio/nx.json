@@ -17,6 +17,10 @@
     ],
     "sharedGlobals": []
   },
+  "projects": {
+    "react-portfolio": "apps/react-portfolio",
+    "angular-recruiter": "apps/angular-recruiter"
+  },
   "nxCloudId": "67c52dc27a34104da229f78d",
   "plugins": [
     {
@@ -85,6 +89,9 @@
       "linter": "eslint",
       "style": "scss",
       "unitTestRunner": "jest"
+    },
+    "@nx/angular:component": {
+      "style": "css"
     }
   }
 }
