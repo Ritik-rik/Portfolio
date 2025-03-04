@@ -1,6 +1,6 @@
 export default {
   displayName: 'angular-recruiter',
-  preset: '../jest.preset.js',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../coverage/angular-recruiter',
   transform: {
